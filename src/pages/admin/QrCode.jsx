@@ -93,7 +93,7 @@ const QrCode = () => {
       </button>
       {!showDialog && !processing && activeScan && (
         <QrReader
-          facingMode={"environment"}
+          facingMode={"rear"}
           delay={500}
           onScan={handleScan}
           className="qr-reader"
