@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
-import { QrReader } from "react-qr-reader";
+// import { QrReader } from "react-qr-reader";
+import QrReader from "react-qr-scanner";
 import Webcam from "react-webcam";
 
 const videoConstraints = {
