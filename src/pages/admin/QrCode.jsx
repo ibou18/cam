@@ -6,6 +6,7 @@ const QrCode = () => {
   const [startScan, setStartScan] = useState(false);
   const [loadingScan, setLoadingScan] = useState(false);
   const [data, setData] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleScan = async (scanData) => {
     setLoadingScan(true);
@@ -16,6 +17,7 @@ const QrCode = () => {
       setStartScan(false);
       setLoadingScan(false);
       // setPrecScan(scanData);
+      setMessage("Scan Ok");
     }
   };
   const handleError = (err) => {
@@ -37,6 +39,8 @@ const QrCode = () => {
       >
         {startScan ? "Stop Scan" : "Start Scan"}
       </button>
+
+      <h1> {message} </h1>
       {startScan && (
         <>
           <select onChange={(e) => setSelected(e.target.value)}>
@@ -44,7 +48,7 @@ const QrCode = () => {
             <option value={"user"}>Caméra Avant</option>
           </select>
           <QrReader
-            facingMode={selected}
+            facingMode={"environment"}
             delay={1000}
             onError={handleError}
             onScan={handleScan}
