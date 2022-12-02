@@ -1,6 +1,6 @@
 // versi "react-qr-reader" 1.0.0. component API harus disesuaikan dengan yg baru
 
-import "./styles.css";
+// import "./styles.css";
 import { useState } from "react";
 import { QrReader } from "react-qr-reader";
 
