@@ -8,25 +8,25 @@ const videoConstraints = {
   facingMode: "user",
 };
 
-const WebcamCapture = () => (
-  <Webcam
-    audio={false}
-    height={720}
-    screenshotFormat="image/jpeg"
-    width={1280}
-    videoConstraints={videoConstraints}
-  >
-    {({ getScreenshot }) => (
-      <button
-        onClick={() => {
-          const imageSrc = getScreenshot();
-        }}
-      >
-        Capture photo
-      </button>
-    )}
-  </Webcam>
-);
+// const WebcamCapture = () => (
+//   <Webcam
+//     audio={false}
+//     height={720}
+//     screenshotFormat="image/jpeg"
+//     width={1280}
+//     videoConstraints={videoConstraints}
+//   >
+//     {({ getScreenshot }) => (
+//       <button
+//         onClick={() => {
+//           const imageSrc = getScreenshot();
+//         }}
+//       >
+//         Capture photo
+//       </button>
+//     )}
+//   </Webcam>
+// );
 
 const QrCode = () => {
   const [code, setCode] = useState(null);
@@ -65,7 +65,7 @@ const QrCode = () => {
 
   return (
     <div className="px-5">
-      <WebcamCapture />
+      {/* <WebcamCapture /> */}
       {/* <video ref={videoRef} className="mx-auto mt-10" />
       <canvas /> */}
 
@@ -93,7 +93,7 @@ const QrCode = () => {
       </button>
       {!showDialog && !processing && activeScan && (
         <QrReader
-          facingMode={selected}
+          facingMode={"environment"}
           delay={500}
           onScan={handleScan}
           className="qr-reader"
